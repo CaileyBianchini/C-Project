@@ -20,41 +20,6 @@
 //	}
 //}
 
-void Guess(int numbers[10], int min, int max, int passed)
-{
-	while (min <= max)
-	{
-		int a = 0;
-		bool goal = false;
-		int guess = (min + max) / 2;
-		guess = numbers[guess];
-		
-		std::cin >> guess >> ": Is this your number?[higher/lower/yes]:";
-
-		if (goal = true)
-		{
-			std::cout << "Yes I got it!!" << std::endl;
-			a = 1;
-			break;
-		}
-
-
-		if (numbers[guess] == goal)
-		{
-			goal = true;
-		}
-		else if (numbers[guess]  < goal)
-		{
-			min = guess + 1;
-		}
-		else if (numbers[guess] > goal)
-		{
-			max = guess - 1;
-		}
-	}
-	passed = a;
-	return;
-}
 
 int main()
 {
@@ -82,7 +47,32 @@ int main()
 	std::cout << "Welcome Players! This is the guessing game!" << std::endl;
 	std::cout << j << ". Fizz" << std::endl;
 
-	Guess(numbers, max, min, passed);
+	while (min <= max)
+	{
+		int a = 0;
+		bool goal = false;
+		int guess = (min + max) / 2;
+		guess = numbers[guess];
+
+		std::cin >> guess >> ": Is this your number?[higher/lower/yes]:";
+
+
+		if (numbers[guess] == goal)
+		{
+			goal = true;
+			std::cin >> guess >> ": Is this your number?[higher/lower/yes]:";
+		}
+		else if (numbers[guess] < goal)
+		{
+			min = guess + 1;
+		}
+		else if (numbers[guess] > goal)
+		{
+			max = guess - 1;
+		}
+	}
+
+	
 
 	system("pause");
 	system("cls");
