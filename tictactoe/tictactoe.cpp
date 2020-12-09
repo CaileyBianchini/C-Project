@@ -5,9 +5,11 @@
 
 void TicTacGrid(char arr[])
 {
-	std::cout << arr[0] << arr[1] << arr[2] << std::endl;
-	std::cout << arr[3] << arr[4] << arr[5] << std::endl;
-	std::cout << arr[6] << arr[7] << arr[8] << std::endl;
+	std::cout << arr[0] << "|" << arr[1] << "|" << arr[2] << std::endl;
+	std::cout << "__" << "_" << "___" << "_" << "__" << std::endl;
+	std::cout << arr[3] << "|" << arr[4] << "|" << arr[5] << std::endl;
+	std::cout << "__" << "_" << "___" << "_" << "__" << std::endl;
+	std::cout << arr[6] << "|" << arr[7] << "|" << arr[8] << std::endl;
 }
 
 int main()
@@ -27,9 +29,11 @@ int main()
 
 	std::cout << "Press the numbers corisponding to the placements!" << std::endl;
 
-	std::cout << "1" << " 2 " << "3" << std::endl;
-	std::cout << "4" << " 5 " << "6" << std::endl;
-	std::cout << "7" << " 8 " << "9" << std::endl;
+	std::cout << "1 " << "|" <<" 2 " << "|" << " 3" << std::endl;
+	std::cout << "__" << "_" << "___" << "_" << "__" << std::endl;
+	std::cout << "4 " << "|" << " 5 " << "|" << " 6" << std::endl;
+	std::cout << "__" << "_" << "___" << "_" << "__" << std::endl;
+	std::cout << "7 " << "|" << " 8 " << "|" << " 9" << std::endl;
 
 	system("pause");
 	system("cls");
@@ -40,6 +44,7 @@ int main()
 		int player2 = 0;
 
 		//player 1
+		std::cout << "Player one: " << std::endl;
 		std::cin >> player1;
 
 		//this will get player 1's choice and implement X in the place they chose
@@ -90,6 +95,7 @@ int main()
 		system("cls");
 
 		//player 2
+		std::cout << "Player two: " << std::endl;
 		std::cin >> player2;
 
 		//this will get player 2's choice and implement O in the place they chose
