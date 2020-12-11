@@ -1,6 +1,10 @@
 #include <iostream>
 
 //Cailey B
+//12/11/2020
+//Programming Year 1
+//class of 2022
+//Tic Tac Toe Assignment
 //Forgive for I have sinned for I did the unthinkable. . .I pulled a Yandere Dev
 
 
@@ -22,6 +26,7 @@ int main()
 
 	std::cout << "Press the numbers corisponding to the placements!" << std::endl;
 
+	//this shows which buttons players need to press
 	std::cout << "1 " << "|" <<" 2 " << "|" << " 3" << std::endl;
 	std::cout << "__" << "_" << "___" << "_" << "__" << std::endl;
 	std::cout << "4 " << "|" << " 5 " << "|" << " 6" << std::endl;
@@ -66,6 +71,7 @@ int main()
 
 	while (gameOver == false)
 	{
+		//players input
 		int player1 = 0;
 		int player2 = 0;
 
@@ -133,7 +139,14 @@ int main()
 			std::cout << "Error. Turn Skipped" << std::endl;
 		}
 
-		//this checks if any of players coins are in a row
+		//shows placement
+		std::cout << grid[0][0] << "|" << grid[0][1] << "|" << grid[0][2] << std::endl;
+		std::cout << "__" << "_" << "___" << "_" << "__" << std::endl;
+		std::cout << grid[1][0] << "|" << grid[1][1] << "|" << grid[1][2] << std::endl;
+		std::cout << "__" << "_" << "___" << "_" << "__" << std::endl;
+		std::cout << grid[2][0] << "|" << grid[2][1] << "|" << grid[2][2] << std::endl;
+
+		//this checks if any of players coins are in a row a.k.a checks every possibily which isn't a lot luckily
 		if (a1 == 1 && b1 == 1 && c1 == 1)
 		{
 			std::cout << "Player One! Winner!" << std::endl;
@@ -183,12 +196,6 @@ int main()
 			break;
 		}
 
-		std::cout << grid[0][0] << "|" << grid[0][1] << "|" << grid[0][2] << std::endl;
-		std::cout << "__" << "_" << "___" << "_" << "__" << std::endl;
-		std::cout << grid[1][0] << "|" << grid[1][1] << "|" << grid[1][2] << std::endl;
-		std::cout << "__" << "_" << "___" << "_" << "__" << std::endl;
-		std::cout << grid[2][0] << "|" << grid[2][1] << "|" << grid[2][2] << std::endl;
-
 		system("pause");
 		system("cls");
 
@@ -197,7 +204,7 @@ int main()
 		std::cin >> player2;
 
 		//this will get player 2's choice and implement O in the place they chose
-		if (player2 = 1 && a == 0)
+		if (player2 == 1 && a == 0)
 		{
 			grid[0][0] = yCoin;
 			a++;
@@ -256,13 +263,14 @@ int main()
 			std::cout << "Error. Turn Skipped" << std::endl;
 		}
 
+		//shows placement
 		std::cout << grid[0][0] << "|" << grid[0][1] << "|" << grid[0][2] << std::endl;
 		std::cout << "__" << "_" << "___" << "_" << "__" << std::endl;
 		std::cout << grid[1][0] << "|" << grid[1][1] << "|" << grid[1][2] << std::endl;
 		std::cout << "__" << "_" << "___" << "_" << "__" << std::endl;
 		std::cout << grid[2][0] << "|" << grid[2][1] << "|" << grid[2][2] << std::endl;
 
-		//this checks if any of players coins are in a row
+		//this checks if any of players coins are in a row a.k.a checks every possibily which isn't a lot luckily
 		if (a2 == 1 && b2 == 1 && c2 == 1)
 		{
 			std::cout << "Player Two! Winner!" << std::endl;
