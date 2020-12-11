@@ -4,14 +4,6 @@
 //Forgive for I have sinned for I did the unthinkable. . .I pulled a Yandere Dev
 
 
-void TicTacGrid(char arr[])
-{
-	std::cout << arr[0] << "|" << arr[1] << "|" << arr[2] << std::endl;
-	std::cout << "__" << "_" << "___" << "_" << "__" << std::endl;
-	std::cout << arr[3] << "|" << arr[4] << "|" << arr[5] << std::endl;
-	std::cout << "__" << "_" << "___" << "_" << "__" << std::endl;
-	std::cout << arr[6] << "|" << arr[7] << "|" << arr[8] << std::endl;
-}
 
 int main()
 {
@@ -23,7 +15,7 @@ int main()
 	system("cls");
 
 	bool gameOver = false;
-	char grid[9];
+	char grid[3][3];
 
 	char xCoin = 'X';
 	char yCoin = 'O';
@@ -84,55 +76,55 @@ int main()
 		//this will get player 1's choice and implement X in the place they chose
 		if (player1 == 1 && a == 0)
 		{
-			grid[0] = xCoin;
+			grid[0][0] = xCoin;
 			a++;
 			a1++;
 		}
 		else if (player1 == 2 && b == 0)
 		{
-			grid[1] = xCoin;
+			grid[0][1] = xCoin;
 			b++;
 			b1++;
 		}
 		else if (player1 == 3 && c == 0)
 		{
-			grid[2] = xCoin;
+			grid[0][2] = xCoin;
 			c++;
 			c1++;
 		}
 		else if (player1 == 4 && d == 0)
 		{
-			grid[3] = xCoin;
+			grid[1][0] = xCoin;
 			d++;
 			d1++;
 		}
 		else if (player1 == 5 && e == 0)
 		{
-			grid[4] = xCoin;
+			grid[1][1] = xCoin;
 			e++;
 			e1++;
 		}
 		else if (player1 == 6 && f == 0)
 		{
-			grid[5] = xCoin;
+			grid[1][2] = xCoin;
 			g++;
 			g1++;
 		}
 		else if (player1 == 7 && g == 0)
 		{
-			grid[6] = xCoin;
+			grid[2][0] = xCoin;
 			g++;
 			g1++;
 		}
 		else if (player1 == 8 && h == 0)
 		{
-			grid[7] = xCoin;
+			grid[2][1] = xCoin;
 			h++;
 			h1++;
 		}
 		else if (player1 == 9 && j == 0)
 		{
-			grid[8] = xCoin;
+			grid[2][2] = xCoin;
 			j++;
 			j1++;
 		}
@@ -191,7 +183,11 @@ int main()
 			break;
 		}
 
-		TicTacGrid(grid);
+		std::cout << grid[0][0] << "|" << grid[0][1] << "|" << grid[0][2] << std::endl;
+		std::cout << "__" << "_" << "___" << "_" << "__" << std::endl;
+		std::cout << grid[1][0] << "|" << grid[1][1] << "|" << grid[1][2] << std::endl;
+		std::cout << "__" << "_" << "___" << "_" << "__" << std::endl;
+		std::cout << grid[2][0] << "|" << grid[2][1] << "|" << grid[2][2] << std::endl;
 
 		system("pause");
 		system("cls");
@@ -203,55 +199,55 @@ int main()
 		//this will get player 2's choice and implement O in the place they chose
 		if (player2 = 1 && a == 0)
 		{
-			grid[0] = yCoin;
+			grid[0][0] = yCoin;
 			a++;
 			a2++;
 		}
 		else if (player2 == 2 && b == 0)
 		{
-			grid[1] = yCoin;
+			grid[0][1] = yCoin;
 			b++;
 			b2++;
 		}
 		else if (player2 == 3 && c == 0)
 		{
-			grid[2] = yCoin;
+			grid[0][2] = yCoin;
 			c++;
 			c2++;
 		}
 		else if (player2 == 4 && d == 0)
 		{
-			grid[3] = yCoin;
+			grid[1][0] = yCoin;
 			d++;
 			d2++;
 		}
 		else if (player2 == 5 && e == 0)
 		{
-			grid[4] = yCoin;
+			grid[1][1] = yCoin;
 			e++;
 			e2++;
 		}
 		else if (player2 == 6 && f == 0)
 		{
-			grid[5] = yCoin;
+			grid[1][2] = yCoin;
 			f++;
 			f2++;
 		}
 		else if (player2 == 7 && g == 0)
 		{
-			grid[6] = yCoin;
+			grid[2][0] = yCoin;
 			g++;
 			g2++;
 		}
 		else if (player2 == 8 && h == 0)
 		{
-			grid[7] = yCoin;
+			grid[2][1] = yCoin;
 			h++;
 			h2++;
 		}
 		else if (player2 == 9 && j == 0)
 		{
-			grid[8] = yCoin;
+			grid[2][2] = yCoin;
 			j++;
 			j2++;
 		}
@@ -260,7 +256,11 @@ int main()
 			std::cout << "Error. Turn Skipped" << std::endl;
 		}
 
-		TicTacGrid(grid);
+		std::cout << grid[0][0] << "|" << grid[0][1] << "|" << grid[0][2] << std::endl;
+		std::cout << "__" << "_" << "___" << "_" << "__" << std::endl;
+		std::cout << grid[1][0] << "|" << grid[1][1] << "|" << grid[1][2] << std::endl;
+		std::cout << "__" << "_" << "___" << "_" << "__" << std::endl;
+		std::cout << grid[2][0] << "|" << grid[2][1] << "|" << grid[2][2] << std::endl;
 
 		//this checks if any of players coins are in a row
 		if (a2 == 1 && b2 == 1 && c2 == 1)
