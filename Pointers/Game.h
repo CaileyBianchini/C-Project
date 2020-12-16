@@ -7,6 +7,9 @@ public:
     void run();
     bool getGameOver() { return m_gameOver; }
     void setGameOver(bool value) { m_gameOver = value; }
+    void createCharacter();
+    void startBattle();
+
 private:
     void start();
     void update();
@@ -15,6 +18,7 @@ private:
 
 private:
     bool m_gameOver;
-    Character m_player1;
-    Character m_player2;
+    Character *m_player1;
+    Character *m_enemy;
+    Character* m_name;
 };
