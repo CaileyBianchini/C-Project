@@ -4,6 +4,27 @@
 //orders matter with everything including includes
 //voids must always go before they are being used at
 
+//this is where you'll be writing what you missed in class
+
+
+//this is where I need to put 
+
+
+int loadProject()
+{
+	int number = 0;
+	char name = ' ';
+
+	//Similar to: Console.Write();
+	std::cout << "Do you wish to create a player? 1 = yes, 2 = no";
+
+	//gets player input as a value
+	std::cin >> number;
+
+
+
+}
+
 int main()
 {
 	Character* player = new Character();
