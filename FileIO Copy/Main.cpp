@@ -4,13 +4,7 @@
 //orders matter with everything including includes
 //voids must always go before they are being used at
 
-//this is where you'll be writing what you missed in class
-
-
-//this is where I need to put 
-
-
-int createCharacter()
+bool createCharacter()
 {
 	Character* player = new Character();
 	player->m_health = 100;
@@ -24,7 +18,7 @@ int createCharacter()
 	file.open("save.txt", std::ios::out | std::ios::binary | std::ios::app);
 	if (!file.is_open())
 	{
-			return 1;
+			return true;
 	}
 
 	//this writes the stats onto the save file
@@ -38,7 +32,7 @@ int createCharacter()
 	std::cout << "Health: " << player->m_health;
 	std::cout << "Damage: " << player->m_damage;
 
-	return 0;
+	return true;
 }
 
 int loadCharacter()
@@ -80,7 +74,7 @@ int main()
 	std::cout << "1 = Create new player?, 2 = Load player?";
 	std::cin >> number;
 
-	if (number = 2)
+	if (number = '2')
 	{
 		loadCharacter();
 	}
@@ -89,5 +83,8 @@ int main()
 		createCharacter();
 	}
 
-	return 0;
+	std::cout << "Press [Enter] to continue";
+	std::cin >> number;
+
+	return false;
 }
