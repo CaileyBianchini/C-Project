@@ -10,32 +10,48 @@
 //this is where I need to put 
 
 
-int loadProject()
-{
-	int number = 0;
-	char name = ' ';
-
-	//Similar to: Console.Write();
-	std::cout << "Do you wish to create a player? 1 = yes, 2 = no";
-
-	//gets player input as a value
-	std::cin >> number;
-
-
-
-}
-
-int main()
+int createCharacter()
 {
 	Character* player = new Character();
 	player->m_health = 100;
 	player->m_damage = 10;
+	player->m_name = ' ';
 
 	//example text files
 
 	std::fstream file;
 
-	file.open("save.txt", std::ios::out);
+	file.open("save.txt", std::ios::out | std::ios::binary | std::ios::app);
+	if (!file.is_open())
+	{
+			return 1;
+	}
+
+	//this writes the stats onto the save file
+	file.write((char*)&player, sizeof(Character));
+
+	//this closes the file
+	file.close();
+
+	//this will print what was created
+	std::cout << "Name: " << player->m_name;
+	std::cout << "Health: " << player->m_health;
+	std::cout << "Damage: " << player->m_damage;
+
+	return 0;
+}
+
+int loadCharacter()
+{
+	Character player = Character();
+	player.m_health = 100;
+	player.m_damage = 10;
+	player.m_name = ' ';
+
+	//example text files
+
+	std::fstream file;
+	file.open("save.txt", std::ios::out | std::ios::binary | std::ios::app);
 
 	if (!file.is_open())
 	{
@@ -43,19 +59,35 @@ int main()
 	}
 
 	//this writes the stats onto the save file
-	file << (*player).m_health << std::endl;
-	file << (*player).m_damage << std::endl;
+	file.read((char*)&player, sizeof(Character));
 
 	//this closes the file
 	file.close();
 
-	//example pf loading from text file
-	Character* player2 = new Character();
 
-	file.open("save.txt", std::ios::in);
-	file >> (*player2).m_health;
-	file >> (*player2).m_damage;
-	file.close();
+	//this will print it
+	std::cout << "Name: " << player.m_name;
+	std::cout << "Health: " << player.m_health;
+	std::cout << "Damage: " << player.m_damage;
+
+	return 0;
+
+}
+
+int main()
+{
+	int number = 0;
+	std::cout << "1 = Create new player?, 2 = Load player?";
+	std::cin >> number;
+
+	if (number = 2)
+	{
+		loadCharacter();
+	}
+	else
+	{
+		createCharacter();
+	}
 
 	return 0;
 }
