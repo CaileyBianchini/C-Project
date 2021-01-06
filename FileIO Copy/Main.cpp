@@ -29,9 +29,9 @@ int createCharacter()
 	file.close();
 
 	//this will print what was created
-	std::cout << "Name: " << player->getName();
-	std::cout << "Health: " << player->getHealth();
-	std::cout << "Damage: " << player->getDamage();
+	std::cout << "Name: " << player->getName() << std::endl;
+	std::cout << "Health: " << player->getHealth() << std::endl;
+	std::cout << "Damage: " << player->getDamage() << std::endl;
 
 	return 1;
 }
@@ -61,9 +61,9 @@ int loadCharacter()
 
 
 	//this will print it
-	std::cout << "Name: " << player.getName();
-	std::cout << "Health: " << player.getHealth();
-	std::cout << "Damage: " << player.getDamage();
+	std::cout << "Name: " << player.getName() << std::endl;
+	std::cout << "Health: " << player.getHealth() << std::endl;
+	std::cout << "Damage: " << player.getDamage() << std::endl;
 
 	return 0;
 
@@ -73,7 +73,7 @@ int main()
 {
 	int number = 0;
 	char blank = ' ';
-	std::cout << "1 = Create new player?, 2 = Load player?";
+	std::cout << "1 = Create new player?, 2 = Load player?" << std::endl;
 	std::cin >> number;
 
 	if (number == '2')
@@ -85,7 +85,7 @@ int main()
 		createCharacter();
 	}
 
-	std::cout << "Press [Enter] to continue";
+	std::cout << "Press and button then [Enter] to continue";
 	std::cin >> blank;
 
 	return 0;
