@@ -1,24 +1,26 @@
 #include <iostream>
 #include <fstream>
 #include "Character.h";
+#include "Charactercpp.cpp";
+
 //orders matter with everything including includes
 //voids must always go before they are being used at
 
-bool createCharacter()
+int createCharacter()
 {
 	Character* player = new Character();
-	player->m_health = 100;
-	player->m_damage = 10;
-	player->m_name = ' ';
+	player->setHealth(100);
+	player->setDamage(10);
+	player->setName('bob');
 
 	//example text files
 
 	std::fstream file;
 
-	file.open("save.txt", std::ios::out | std::ios::binary | std::ios::app);
+	file.open("savePlayer.txt", std::ios::out | std::ios::binary | std::ios::app);
 	if (!file.is_open())
 	{
-			return true;
+			return 0;
 	}
 
 	//this writes the stats onto the save file
@@ -28,24 +30,24 @@ bool createCharacter()
 	file.close();
 
 	//this will print what was created
-	std::cout << "Name: " << player->m_name;
-	std::cout << "Health: " << player->m_health;
-	std::cout << "Damage: " << player->m_damage;
+	std::cout << "Name: " << player->getName();
+	std::cout << "Health: " << player->getHealth();
+	std::cout << "Damage: " << player->getDamage();
 
-	return true;
+	return 1;
 }
 
 int loadCharacter()
 {
 	Character player = Character();
-	player.m_health = 100;
-	player.m_damage = 10;
-	player.m_name = ' ';
+	player.setHealth(100);
+	player.setDamage(10);
+	player.setName('bob');
 
 	//example text files
 
 	std::fstream file;
-	file.open("save.txt", std::ios::out | std::ios::binary | std::ios::app);
+	file.open("savePlayer.txt", std::ios::out | std::ios::binary | std::ios::app);
 
 	if (!file.is_open())
 	{
@@ -60,9 +62,9 @@ int loadCharacter()
 
 
 	//this will print it
-	std::cout << "Name: " << player.m_name;
-	std::cout << "Health: " << player.m_health;
-	std::cout << "Damage: " << player.m_damage;
+	std::cout << "Name: " << player.getName();
+	std::cout << "Health: " << player.getHealth();
+	std::cout << "Damage: " << player.getDamage();
 
 	return 0;
 
@@ -74,7 +76,7 @@ int main()
 	std::cout << "1 = Create new player?, 2 = Load player?";
 	std::cin >> number;
 
-	if (number = '2')
+	if (number == '2')
 	{
 		loadCharacter();
 	}
@@ -86,5 +88,5 @@ int main()
 	std::cout << "Press [Enter] to continue";
 	std::cin >> number;
 
-	return false;
+	return 0;
 }
