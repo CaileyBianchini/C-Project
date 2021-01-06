@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include "Character.h";
-#include "Charactercpp.cpp";
 
 //orders matter with everything including includes
 //voids must always go before they are being used at
@@ -73,6 +72,7 @@ int loadCharacter()
 int main()
 {
 	int number = 0;
+	char blank = ' ';
 	std::cout << "1 = Create new player?, 2 = Load player?";
 	std::cin >> number;
 
@@ -86,7 +86,7 @@ int main()
 	}
 
 	std::cout << "Press [Enter] to continue";
-	std::cin >> number;
+	std::cin >> blank;
 
 	return 0;
 }

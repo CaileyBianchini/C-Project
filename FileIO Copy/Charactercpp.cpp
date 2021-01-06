@@ -30,17 +30,17 @@ bool Character::getIsAlive()
 	return m_health > 0;
 }
 
-void seteDamage(float damageVal)
+void Character::setDamage(float damageVal)
 {
 	m_damage = damageVal;
 }
 
-void setHealth(float healthVal)
+void Character::setHealth(float healthVal)
 {
 	m_health = healthVal;
 }
 
-void setName(char nameVal)
+void Character::setName(char nameVal)
 {
 	m_name = nameVal;
 }
